@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- update the version number as needed -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-messaging.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+
+    <!-- CDN FirebaseUI drop-in for authentication -->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css"/>
+
+    <title>H2H</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+  <body>
+    <h1>Heart-to-Hearth</h1>
+
+
+    <div>
+                    <!-- The surrounding HTML is left untouched by FirebaseUI.
+                                 Your app may use that space for branding, controls and other customizations.-->
+                    <div id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>
+                </div>
+
+
+    We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+
+
+    <div class="footer navbar-dark bg-dark">
+        <div id="load" style="color: #d42c08">Firebase SDK Loading&hellip;</div>
+    </div>
+    
+    <script rel="script" type="application/javascript" src="src/firebaseConfig.js" ></script>
+  </body>
+</html>
