@@ -6,14 +6,15 @@ function createWindow () {
   let win = new BrowserWindow({
     width: 1920,
     height: 1080,
-    backgroundColor: '#424242',
+    backgroundColor: '#297481',
+    icon: 'src/resources/img/campfire.ico',
     webPreferences: {
       nodeIntegration: true
     }
   })
-
+  // win.removeMenu();
   // and load the index.html of the app.
-  win.loadFile('index.html')
-//   win.maximize()
+  win.loadFile('index.html');
+  
 }
 app.whenReady().then(createWindow)

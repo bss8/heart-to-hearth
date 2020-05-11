@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-        document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        // document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
 
         // Initialize the FirebaseUI Widget using Firebase.
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -58,14 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
                     requireDisplayName: true
-                },
-                // Leave the lines as is for the providers you want to offer your users.
-                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            ],
-            // Terms of service url.
-            tosUrl: 'termsOfService.txt',
-            // Privacy policy url.
-            privacyPolicyUrl: '/privacyPolicy'
+                }
+            ]
         };
 
         ui.start('#firebaseui-auth-container', uiConfig);
@@ -90,7 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     phoneNumber = user.phoneNumber;
                     providerData = user.providerData;
 
-                    console.log("uid: " + uid);
+                    if(!emailVerified) {
+                        user.sendEmailVerification().then(function() {
+                            // Email sent.
+                          }).catch(function(error) {
+                            // An error happened.
+                          });
+                    }
 
                     user.getIdToken().then(function(accessToken) {
                     
@@ -108,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     } catch (e) {
-        console.error(e);
-        document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        // console.error(e);
+        // document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
     }
 
 });

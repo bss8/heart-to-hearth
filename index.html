@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
 
     <!-- update the version number as needed -->
-    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-messaging.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.3/firebase-messaging.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.3/firebase-storage.js"></script>
 
     <!-- CDN FirebaseUI drop-in for authentication -->
     <script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
@@ -17,29 +17,117 @@
 
     <title>H2H</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" /> -->
+
+    <link type="text/css" rel="stylesheet" href="src/resources/css/style.css" />
+
   </head>
   <body>
-    <h1>Heart-to-Hearth</h1>
-
 
     <div>
-                    <!-- The surrounding HTML is left untouched by FirebaseUI.
-                                 Your app may use that space for branding, controls and other customizations.-->
-                    <div id="firebaseui-auth-container"></div>
-                    <div id="loader">Loading...</div>
-                </div>
-
-
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
-
-    <div class="footer navbar-dark bg-dark">
-        <div id="load" style="color: #d42c08">Firebase SDK Loading&hellip;</div>
+      <div class="container">
+        <img src="src/resources/img/avatar2.png" height="100" width="100" class="avatar" />
+        <div class="middle">
+          <div class="button">Change</div>
+        </div>
+      </div>
+      <div class="button-real" style="float: right; margin-top: 20px;">Log-In</div>
     </div>
     
+
+    <nav class="top-right open">
+      <a class="disc l1">
+        <div>Messages</div>
+      </a>
+      <a class="disc l2">
+        <div>Photos</div>
+      </a>
+      <a class="disc l3">
+        <div>Profile</div>
+      </a>
+      <a class="disc l4">
+        <div>Likes</div>
+      </a>
+      <a class="disc l5 toggle fire">
+        <!-- Menu -->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </nav>
+
+    
+    <div class="chat scrollbar">
+      <div class="mine messages">
+        <div class="message last">
+          Dude
+        </div>
+      </div>
+      <div class="yours messages">
+        <div class="message">
+          Hey!
+        </div>
+        <div class="message">
+          You there?
+        </div>
+        <div class="message last">
+          Hello, how's it going?
+        </div>
+      </div>
+      <div class="mine messages">
+        <div class="message">
+          Great thanks!
+        </div> 
+        <div class="message">
+          How about you?
+        </div>
+      </div>
+    </div>
+
+    <div style="display: none;">
+      <!-- The surrounding HTML is left untouched by FirebaseUI.
+        Your app may use that space for branding, controls and other customizations.-->
+      <div id="firebaseui-auth-container"></div>
+      <div id="loader">Loading...</div>
+    </div>
+
+    <div class="editableMessage" contenteditable="true">
+      <p>Your message...</p>
+    </div>
+
+    <!-- <div class="fire">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div> -->
+
     <script rel="script" type="application/javascript" src="src/firebaseConfig.js" ></script>
+    <script rel="script" type="application/javascript" src="src/userProfile.js" ></script>
+
+    <script>
+      toggle = document.querySelectorAll(".toggle")[0];
+      nav = document.querySelectorAll("nav")[0];
+      // toggle_open_text = 'Menu';
+      // toggle_close_text = 'Close';
+
+      toggle.addEventListener('click', function() {
+        nav.classList.toggle('open');
+        
+        if (nav.classList.contains('open')) {
+          // toggle.innerHTML = toggle_close_text;
+        } else {
+          // toggle.innerHTML = toggle_open_text;
+        }
+      }, false);
+
+      setTimeout(function(){
+        nav.classList.toggle('open');	
+      }, 800);
+    </script>
+
   </body>
 </html>
