@@ -23,87 +23,102 @@
 
   </head>
   <body>
-
-    <div>
-      <div class="container">
-        <img src="src/resources/img/avatar2.png" height="100" width="100" class="avatar" />
-        <div class="middle">
-          <div class="button">Change</div>
+    <div class="leftModuleStyle">
+      <h2 class="friends"> <em>Family & Friends</em> </h2>
+      <hr class="dashOfOrange"/>
+      <nav class="bottom-left open">
+        <a class="disc l1">
+          <div>Messages</div>
+        </a>
+        <a class="disc l2">
+          <div>Photos</div>
+        </a>
+        <a class="disc l3">
+          <div>Profile</div>
+        </a>
+        <a class="disc l4">
+          <div>Likes</div>
+        </a>
+        <a class="disc l5 toggle fire">
+          <!-- Menu -->
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </nav>
+    </div>
+    <div class="grid-container">
+      <div class="item1"></div>
+      <div class="item2">
+        <div style="display: none;">
+          <!-- The surrounding HTML is left untouched by FirebaseUI.
+            Your app may use that space for branding, controls and other customizations.-->
+          <div id="firebaseui-auth-container"></div>
+          <div id="loader">Loading...</div>
         </div>
       </div>
-      <div class="button-real" style="float: right; margin-top: 20px;">Log-In</div>
-    </div>
-    
-
-    <nav class="top-right open">
-      <a class="disc l1">
-        <div>Messages</div>
-      </a>
-      <a class="disc l2">
-        <div>Photos</div>
-      </a>
-      <a class="disc l3">
-        <div>Profile</div>
-      </a>
-      <a class="disc l4">
-        <div>Likes</div>
-      </a>
-      <a class="disc l5 toggle fire">
-        <!-- Menu -->
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-    </nav>
-
-    
-    <div class="chat scrollbar">
-      <div class="mine messages">
-        <div class="message last">
-          Dude
+      <div class="item3">
+        
+      </div>  
+      <div class="item4">
+        <div>
+          <div class="container">
+            <img src="src/resources/img/855154724_lthumb.jpg" height="100" width="100" class="avatar" />
+            <div class="middle">
+              <div class="button">Change</div>
+            </div>
+          </div>
+          <div class="loginButton" style="float: right; margin-top: 20px;">Log-In</div>
         </div>
       </div>
-      <div class="yours messages">
-        <div class="message">
-          Hey!
-        </div>
-        <div class="message">
-          You there?
-        </div>
-        <div class="message last">
-          Hello, how's it going?
-        </div>
+      <div class="item5">
+        
       </div>
-      <div class="mine messages">
-        <div class="message">
-          Great thanks!
-        </div> 
-        <div class="message">
-          How about you?
+      <div class="item6">
+        <div class="chat scrollbar">
+          <div class="friendNameDisplay">Boris</div>
+          <div class="mine messages">
+            <div class="message last">
+              Dude
+            </div>
+          </div>
+          <div class="yours messages">
+            <div class="message">
+              Hey!
+            </div>
+            <div class="message">
+              You there?
+            </div>
+            <div class="message last">
+              Hello, how's it going?
+            </div>
+          </div>
+          <div class="mine messages">
+            <div class="message">
+              Great thanks!
+            </div> 
+            <div class="message">
+              How about you?
+            </div>
+          </div>
         </div>
+        <div style="background-color: white;">
+          <div class="editableMessage" contenteditable="true">
+            <p>Your message...</p>
+          </div>
+          <div class="sendButton" style=" float: right;">Send</div>
+        </div>
+        
       </div>
+      <div class="item7">
+       
+      </div>
+      <!-- <div class="item8">
+        
+      </div>  -->
     </div>
-
-    <div style="display: none;">
-      <!-- The surrounding HTML is left untouched by FirebaseUI.
-        Your app may use that space for branding, controls and other customizations.-->
-      <div id="firebaseui-auth-container"></div>
-      <div id="loader">Loading...</div>
-    </div>
-
-    <div class="editableMessage" contenteditable="true">
-      <p>Your message...</p>
-    </div>
-
-    <!-- <div class="fire">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div> -->
 
     <script rel="script" type="application/javascript" src="src/firebaseConfig.js" ></script>
     <script rel="script" type="application/javascript" src="src/userProfile.js" ></script>

@@ -6,7 +6,7 @@ function createWindow () {
   let win = new BrowserWindow({
     width: 1920,
     height: 1080,
-    backgroundColor: '#297481',
+    backgroundColor: '#3D4849',
     icon: 'src/resources/img/campfire.ico',
     webPreferences: {
       nodeIntegration: true
